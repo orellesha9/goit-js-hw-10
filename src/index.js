@@ -4,7 +4,7 @@ import { fetchCatByBreed } from './cat-api';
 import axios from 'axios';
 import Notiflix from 'notiflix';
 
-refs = {
+const refs = {
   selecter: document.querySelector('.breed-select'),
   loader: document.querySelector('.loader'),
   error: document.querySelector('.error'),
