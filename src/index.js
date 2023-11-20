@@ -9,15 +9,7 @@ const refs = {
   loader: document.querySelector('.loader'),
   error: document.querySelector('.error'),
   catInfo: document.querySelector('.cat-info'),
-}
-new SlimSelect({
-  select: refs.selecter, // передача посилання на елемент selecter
-  settings: {
-    contentLocation: document.getElementById('single'),
-  },
-});
-
-
+};
 
 console.log(refs.catInfo);
 refs.loader.style.display = 'block';
@@ -25,7 +17,12 @@ fetchBreeds()
   .then(data => {
     refs.selecter.innerHTML = data;
     refs.loader.style.display = 'none';
-    refs.selecter.style.display = 'block';
+  
+     refs.selecter.style.display = 'block';
+      new SlimSelect({
+        select: `refs.selecter`,
+      });
+   
   })
   .catch(err => {
     console.log(err);
@@ -40,6 +37,7 @@ refs.selecter.addEventListener('change', selecterEvent);
 function selecterEvent(event) {
   refs.catInfo.style.display = 'none';
   refs.loader.style.display = 'block';
+
   const selectedValue = event.target.value;
 
   fetchCatByBreed(selectedValue)

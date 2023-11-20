@@ -22,7 +22,7 @@
   display: block;
   margin: 20px auto;
   position: relative;
-  border: 3px solid #FFF;
+  border: 3px solid #3b3737;
   border-radius: 50%;
   box-sizing: border-box;
   animation: animloader 2s linear infinite;
@@ -32,7 +32,7 @@
   box-sizing: border-box;
   width: 6px;
   height: 24px;
-  background: #FFF;
+  background: #3b3737;
   transform: rotate(-45deg);
   position: absolute;
   bottom: -20px;
