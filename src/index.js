@@ -11,7 +11,7 @@ const refs = {
   catInfo: document.querySelector('.cat-info'),
 };
 
-console.log(refs.catInfo);
+
 refs.loader.style.display = 'block';
 fetchBreeds()
   .then(data => {
@@ -42,7 +42,6 @@ function selecterEvent(event) {
 
   fetchCatByBreed(selectedValue)
     .then(data => {
-      console.log(data);
       refs.loader.style.display = 'none';
       refs.catInfo.innerHTML = data;
       refs.catInfo.style.display = 'flex';
