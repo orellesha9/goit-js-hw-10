@@ -19,9 +19,9 @@ const API_KEY =
 export function fetchCatByBreed(breedId) {
   const BASE_URL_SEARCH = 'https://api.thecatapi.com/v1/images/search';
   const END_POINT = 'breed_ids=';
-  const params = new URLSearchParams({
-    'x-api-key': API_KEY,
-  });
+  // const params = new URLSearchParams({
+  //   'x-api-key': API_KEY,
+  // });
 
   return axios
     .get(`${BASE_URL_SEARCH}?${END_POINT}${breedId}`)

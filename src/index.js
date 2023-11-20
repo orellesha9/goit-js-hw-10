@@ -20,7 +20,7 @@ fetchBreeds()
   
      refs.selecter.style.display = 'block';
       new SlimSelect({
-        select: `refs.selecter`,
+        select: `#refs.selecter`,
       });
    
   })
