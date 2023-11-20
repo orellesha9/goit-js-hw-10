@@ -35,7 +35,7 @@ fetchBreeds()
     refs.loader.style.display = 'none';
   });
 
-SlimSelect.addEventListener('change', selecterEvent);
+refs.selecter.addEventListener('change', selecterEvent);
 
 function selecterEvent(event) {
   refs.catInfo.style.display = 'none';
