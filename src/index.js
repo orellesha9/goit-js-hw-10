@@ -10,10 +10,14 @@ const refs = {
   error: document.querySelector('.error'),
   catInfo: document.querySelector('.cat-info'),
 }
+new SlimSelect({
+  select: refs.selecter, // передача посилання на елемент selecter
+  settings: {
+    contentLocation: document.getElementById('single'),
+  },
+});
 
-// new SlimSelect({
-//   select: '.breed-select',
-// });
+
 
 console.log(refs.catInfo);
 refs.loader.style.display = 'block';
@@ -31,12 +35,13 @@ fetchBreeds()
     refs.loader.style.display = 'none';
   });
 
-refs.selecter.addEventListener('change', selecterEvent);
+SlimSelect.addEventListener('change', selecterEvent);
 
 function selecterEvent(event) {
   refs.catInfo.style.display = 'none';
   refs.loader.style.display = 'block';
   const selectedValue = event.target.value;
+
   fetchCatByBreed(selectedValue)
     .then(data => {
       console.log(data);

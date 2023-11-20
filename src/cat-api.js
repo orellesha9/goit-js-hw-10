@@ -28,7 +28,7 @@ export function fetchCatByBreed(breedId) {
     .then(({ data }) => {
       return data
         .map(data => {
-          return `<img src="${data.url}" style="width: 400px; height: 300px;"><div style="padding-left: 20px;"><h2>${data.breeds[0].name}</h2><p width="100px">${data.breeds[0].description}</p><p><span style="font-weight: bold;">Temperament:</span>${data.breeds[0].temperament}</p></div>`;
+          return `<img src="${data.url}" style="width: 400px; height: 300px;"><div style="padding-left: 20px; object-fit:cover"><h2>${data.breeds[0].name}</h2><p width="100px">${data.breeds[0].description}</p><p><span style="font-weight: bold;">Temperament:</span>${data.breeds[0].temperament}</p></div>`;
         })
         .join('');
     });
